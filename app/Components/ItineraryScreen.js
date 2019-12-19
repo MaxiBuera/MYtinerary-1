@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import { Text, View, ScrollView, TouchableHighlight, StyleSheet, TextInput,Image } from 'react-native';
 import { List, ListItem, withTheme } from 'react-native-elements'
-import { FlatList } from 'react-native';
+import AnimatedText from './AnimatedText';
 import { AntDesign } from '@expo/vector-icons';
 import ActivityCarousel from './ActivityCarousel';
 import HomeComponent from './HomeComponent';
@@ -113,12 +113,14 @@ class ItineraryScreen extends React.Component {
 
     }
 
+    
+
     render = () => {
         const { navigate } = this.props.navigation;
         return (
-            <View>
+            <View style={{height: '100%'}}>
             <ScrollView>
-                <View style={{ flex: 1, width: '90%', marginBottom:'13%',backgroundColor:'#fafafa'}}>
+                <View style={{ flex: 1, width: '100%', marginBottom:'13%',backgroundColor:'#fafafa'}}>
 
                     <ImageWithName city={this.state.city} />
 
@@ -209,9 +211,8 @@ class ItineraryScreen extends React.Component {
 
                         :
                         <View style={{height:425, backgroundColor:"white",justifyContent:'center',alignItems:'center'}}>
-
-                            <Image source={require('../assets/loading.gif')} style={{width:200, height:200 }} />
-                        
+                            <Image source={require('../assets/loading.gif')} style={{width:200, height:200 }} />                         
+                            <AnimatedText />
                         </View>
                     }
     

@@ -62,7 +62,7 @@ class LoginScreen extends React.Component {
                 <Image style={styles.imgLogo} source={require('../assets/img/myTin.jpg')} />
 
                 <TextInput
-                    placeholder="Username or email"
+                    placeholder="Email"
                     placeholderTextColor="gray"
                     style={styles.input}
                     onChangeText={text => this.setState({ email: text})} />

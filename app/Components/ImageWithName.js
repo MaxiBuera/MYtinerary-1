@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
       image: {
         width: '100%',
         height: 150,
+        left:-5,
         borderRadius: 10
       },
       text: {
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         fontWeight: 'bold',textAlign:'center',
         justifyContent:'center',
-        alignContent:'center',top:80,left:0,right:0,
+        alignContent:'center',top:80,left:-5,right:0,
         alignSelf:'center',
         backgroundColor: '#fafafa',
         fontSize: 25,

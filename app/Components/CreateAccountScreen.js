@@ -31,7 +31,11 @@ class CreateAccountScreen extends React.Component {
     }
 
     handleSubmit() {
+        if(this.state.email == '' || this.state.user == ''){
+            return alert("Incorrect username or password");
+        }
 
+        
         axios.post('https://mytinerary-grupo2.herokuapp.com/api/users/adduser/', this.state)
             .then(res => {
 
@@ -39,10 +43,10 @@ class CreateAccountScreen extends React.Component {
 
                     alert("ERROR: The email you entered already has an associated account");
 
-                } else {
+                }else {
 
                     alert("Your account has been successfully created!");
-
+                    
                     this.props.logUserNow(this.state)
                         .then((data) => {
 
@@ -62,12 +66,24 @@ class CreateAccountScreen extends React.Component {
             .catch(error => console.log(error))
     }
 
+
+    
+    inputValidation(){
+
+        if(this.setState({email })== ""){
+            return "x"
+        }
+        else{
+            this.handleSubmit
+        }
+    }
+
     render() {
 
         const { navigate } = this.props.navigation;
 
         return (
-<KeyboardAvoidingView behavior={'height'} keyboardVerticalOffset={100} >
+            <KeyboardAvoidingView behavior={'height'} keyboardVerticalOffset={100} >
             <ScrollView contentContainerStyle={{justifyContent:'space-between'}}>
             
                 <View style={styles.container}>
@@ -77,7 +93,7 @@ class CreateAccountScreen extends React.Component {
                     <TextInput
                         placeholder="Username"
                         placeholderTextColor="gray"
-                        style={styles.input} 
+                        style={styles.input}
                         onChangeText={text => this.setState({ username: text })} />
 
                     <TextInput
@@ -117,14 +133,14 @@ class CreateAccountScreen extends React.Component {
                         style={styles.input}
                         onChangeText={text => this.setState({ image: text })} />
 
-                    <TouchableOpacity style={styles.button} onPress={this.handleSubmit}>
+                    <TouchableOpacity style={styles.button} onPress={() => this.handleSubmit()}>
                         <Text style={styles.colortextbutton}>SUBMIT</Text>
                     </TouchableOpacity>
 
                     
 
                 </View>
-                <HomeComponent navigate={navigate}/>
+                
             </ScrollView>
            
             </KeyboardAvoidingView>
@@ -154,6 +170,7 @@ const styles = StyleSheet.create({
         padding: 20,
         justifyContent: 'space-between',
         alignItems: 'center',
+        //marginBottom:'20%'
     },
     logoSolo: {
         height: 80,
