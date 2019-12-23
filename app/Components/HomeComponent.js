@@ -21,7 +21,8 @@ class HomeComponent extends React.Component {
             justifyContent:'space-around',
             elevation: 24,shadowOpacity: 0.58,
             shadowRadius: 16.00,
-            borderWidth:0.5
+            borderWidth:0.5,opacity:0.9
+
             }}>
                 <TouchableOpacity onPress={() => this.props.navigate('Home')}>
                     <Image style={styles.logoSolo} source={require('../assets/img/homeIconR.png')}/>

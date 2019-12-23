@@ -48,7 +48,7 @@ class CitiesScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (<View>
-            <View style={{marginTop:5,marginBottom:5}}>
+            <View style={{marginTop:5}}>
             <ScrollView contentContainerStyle={styles.container}>
                 <TextInput
                     style={{width: '90%', height: 50, textAlign: 'center', borderLeftWidth: 1,

@@ -68,22 +68,15 @@ class CreateAccountScreen extends React.Component {
 
 
     
-    inputValidation(){
-
-        if(this.setState({email })== ""){
-            return "x"
-        }
-        else{
-            this.handleSubmit
-        }
-    }
+   
 
     render() {
 
         const { navigate } = this.props.navigation;
 
         return (
-            <KeyboardAvoidingView behavior={'height'} keyboardVerticalOffset={100} >
+            
+            <KeyboardAvoidingView behavior={'height'} keyboardVerticalOffset={100} style={{justifyContent: 'space-between', height: '100%'}}>
             <ScrollView contentContainerStyle={{justifyContent:'space-between'}}>
             
                 <View style={styles.container}>
@@ -136,13 +129,9 @@ class CreateAccountScreen extends React.Component {
                     <TouchableOpacity style={styles.button} onPress={() => this.handleSubmit()}>
                         <Text style={styles.colortextbutton}>SUBMIT</Text>
                     </TouchableOpacity>
-
-                    
-
-                </View>
-                
+                </View><HomeComponent navigate={navigate}/>
             </ScrollView>
-           
+            
             </KeyboardAvoidingView>
         );
     }
@@ -170,7 +159,7 @@ const styles = StyleSheet.create({
         padding: 20,
         justifyContent: 'space-between',
         alignItems: 'center',
-        //marginBottom:'20%'
+        marginBottom:'20%'
     },
     logoSolo: {
         height: 80,
